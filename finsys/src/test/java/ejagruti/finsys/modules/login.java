@@ -42,9 +42,8 @@ public class login {
 	}
 
 	@Given("^user is on the application login page$")
-	public void LoginPage() {
+	public void user_is_on_application_login_page() {
 		loginpageobj = new loginpage(baseclass.driver);
-		baseclass.driver.get("http://localhost/finsys/login.html");
 	}
 
 	@When("^user enters \"(.*)\" as username$")
@@ -61,12 +60,6 @@ public class login {
 	@When("^user clicks on login button$")
 	public void LoginButtonClick() {
 		loginpageobj.loginbutton.click();
-	}
-
-	@Given("^user is on the application home page$")
-	public void HomePage() {
-
-		homepageobj = new homepage(baseclass.driver);
 	}
 
 	@Then("^user gets the message starting with \"(.*)\" on the top$")
@@ -92,6 +85,12 @@ public class login {
 				"Please Enter Valid Username or Password!!!"));
 		String texterror = loginpage.textAlert.getText();
 		System.out.println(texterror + " --------------------");
+	}
+	
+	@Then("^close the browser$")
+	public void close_the_browser() throws Exception {
+	  baseclass.driver.quit();
+	 
 	}
 	// ==================================================================
 
