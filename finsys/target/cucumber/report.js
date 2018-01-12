@@ -280,32 +280,34 @@ formatter.scenario({
   ]
 });
 formatter.step({
-  "name": "user is on application login page",
+  "name": "user is on the application login page",
   "keyword": "Given "
 });
-formatter.match({});
+formatter.match({
+  "location": "login.user_is_on_application_login_page()"
+});
 formatter.result({
-  "status": "undefined"
+  "status": "passed"
 });
 formatter.step({
-  "name": "user enters \"test\" as username",
+  "name": "user enters \"dummm\" as username",
   "keyword": "When "
 });
 formatter.match({
   "location": "login.EnterUserName(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "user enters \"test123\" as password",
+  "name": "user enters \"Password\" as password",
   "keyword": "When "
 });
 formatter.match({
   "location": "login.EnterPassword(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "user click on login button",

@@ -30,9 +30,9 @@ Scenario: Login Functionality for valid username and invalid password
 	
 	@SmokeTest @EndToEnd
 	Scenario: Login Functionality for invalid username and valid password
-	Given user is on application login page
-	When user enters "test" as username
-	When user enters "test123" as password
+	Given user is on the application login page
+	When user enters "dummm" as username
+	When user enters "Password" as password
 	And user click on login button
 	Then user is on the same login page
 	And user gets the message starting with "Please Enter Valid Username or Password!!!" on the bottom
