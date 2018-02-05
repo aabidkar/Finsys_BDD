@@ -1,7 +1,6 @@
 package ejagruti.finsys.modules;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,6 +12,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import ejagruti.finsys.pageobjects.baseclass;
+import ejagruti.finsys.pageobjects.createComapnyPage;
 import ejagruti.finsys.pageobjects.homepage;
 import ejagruti.finsys.pageobjects.loginpage;
 
@@ -20,6 +20,7 @@ public class login {
 	// --------------Operations---------
 	loginpage loginpageobj = null;
 	homepage homepageobj = null;
+	createComapnyPage createComapnyPageobj = null;
 
 	@When("^user opens the \"(.*)\" browser$")
 	public void OpenBrowser(String BrowserName) {
@@ -86,11 +87,11 @@ public class login {
 		String texterror = loginpage.textAlert.getText();
 		System.out.println(texterror + " --------------------");
 	}
-	
+
 	@Then("^close the browser$")
 	public void close_the_browser() throws Exception {
-	  baseclass.driver.quit();
-	 
+		baseclass.driver.quit();
+
 	}
 	// ==================================================================
 
