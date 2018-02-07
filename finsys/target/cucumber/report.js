@@ -38,19 +38,19 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user enters \"dummyfm\" as username",
-  "keyword": "When "
+  "name": "user enters \"Dummyfm\" as username",
+  "keyword": "And "
 });
 formatter.match({
   "location": "login.EnterUserName(String)"
 });
 formatter.result({
-  "error_message": "java.lang.NullPointerException\r\n\tat ejagruti.finsys.modules.login.EnterUserName(login.java:52)\r\n\tat ✽.user enters \"dummyfm\" as username(src/test/resources/FeatureCollections/CreateCompany.feature:10)\r\n",
+  "error_message": "java.lang.NullPointerException\r\n\tat ejagruti.finsys.modules.login.EnterUserName(login.java:52)\r\n\tat ✽.user enters \"Dummyfm\" as username(src/test/resources/FeatureCollections/CreateCompany.feature:10)\r\n",
   "status": "failed"
 });
 formatter.step({
   "name": "user enters \"passw0rd\" as password",
-  "keyword": "When "
+  "keyword": "And "
 });
 formatter.match({
   "location": "login.EnterPassword(String)"
@@ -69,11 +69,11 @@ formatter.result({
   "status": "skipped"
 });
 formatter.step({
-  "name": "user gets the message starting with \"Welcome\" on the top browser",
+  "name": "user gets the message starting with \"Welcome\" on the top",
   "keyword": "And "
 });
 formatter.match({
-  "location": "createCompany.CheckForHomePage(String)"
+  "location": "login.CheckForHomePage(String)"
 });
 formatter.result({
   "status": "skipped"
@@ -91,6 +91,9 @@ formatter.scenario({
     },
     {
       "name": "@CreateComapny"
+    },
+    {
+      "name": "@SmokeTest"
     }
   ]
 });
@@ -98,8 +101,10 @@ formatter.step({
   "name": "user is clicks on Manage Company link from Financial Analysis breadcrumb",
   "keyword": "When "
 });
-formatter.match({});
+formatter.match({
+  "location": "createCompany.clickLink(String)"
+});
 formatter.result({
-  "status": "undefined"
+  "status": "skipped"
 });
 });

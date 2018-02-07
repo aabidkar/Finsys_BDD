@@ -2,7 +2,6 @@ package ejagruti.finsys.modules;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.api.Scenario;
@@ -21,6 +20,7 @@ public class login {
 	loginpage loginpageobj = null;
 	homepage homepageobj = null;
 	createComapnyPage createComapnyPageobj = null;
+	
 
 	@When("^user opens the \"(.*)\" browser$")
 	public void OpenBrowser(String BrowserName) {
@@ -47,23 +47,23 @@ public class login {
 		loginpageobj = new loginpage(baseclass.driver);
 	}
 
-	@When("^user enters \"(.*)\" as username$")
+	@And("^user enters \"(.*)\" as username$")
 	public void EnterUserName(String Username) {
 		loginpageobj.username.sendKeys(Username);
 	}
 
-	@When("^user enters \"(.*)\" as password$")
+	@And("^user enters \"(.*)\" as password$")
 	public void EnterPassword(String Password) {
 		System.out.println(Password + " ---------------");
 		loginpageobj.password.sendKeys(Password);
 	}
 
-	@When("^user clicks on login button$")
+	@And("^user clicks on login button$")
 	public void LoginButtonClick() {
 		loginpageobj.loginbutton.click();
 	}
 
-	@Then("^user gets the message starting with \"(.*)\" on the top$")
+	@And("^user gets the message starting with \"(.*)\" on the top$")
 	public void CheckForHomePage(String message) {
 		baseclass.wait.until(ExpectedConditions.textToBePresentInElement(homepageobj.logout, "LOGOUT"));
 		String welcomemsg = homepageobj.welcomemessage.getText();

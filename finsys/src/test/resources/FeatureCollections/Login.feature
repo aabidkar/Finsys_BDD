@@ -11,7 +11,7 @@ Background: user is successfully logged in
 @EnToEnd 
 Scenario: Login Functionality for valid username and password 
 	Given user is on the application login page 
-	When user enters "dummyfm" as username 
+	And user enters "dummyfm" as username 
 	And user enters "passw0rd" as password 
 	And user clicks on login button 
 	Then user is on the application home page 
@@ -47,8 +47,8 @@ Scenario: Login Functionality for blank username and  password
 	Then close the browser 
 	
 @EndToEnd 
-Scenario:
-Login Functionality by passing special characters in username and invalid password 
+Scenario: 
+	Login Functionality by passing special characters in username and invalid password 
 	Given user is on the application login page 
 	When user enters "@#%$@$#54325" as username 
 	When user enters "test" as password 

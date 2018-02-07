@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class createComapnyPage {
 	WebDriver localdriverobject;
+	
 
 	public createComapnyPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -37,13 +38,5 @@ public class createComapnyPage {
 	public static WebElement city;
 	@FindBy(how = How.XPATH, using = "//span[@class='l-btn-icon icon-save']")
 	public WebElement save;
-	@FindBy(how = How.XPATH, using = "//input[@placeholder='Username']")
-	public WebElement username;
-	@FindBy(how = How.XPATH, using = "//input[@placeholder='Password']")
-	public WebElement password;
-	@FindBy(how = How.XPATH, using = "//span[.='Login']")
-	public WebElement loginbutton;
-	@FindBy(how=How.ID, using="error")
-	public static WebElement textAlert;
 
 }
