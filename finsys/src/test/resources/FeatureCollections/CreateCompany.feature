@@ -15,7 +15,7 @@ Feature: Create Compnay Feature
 
   @SmokeTest
   Scenario: Create Company with all valid inputs
-  #When user is clicks on Manage Company link from Financial Analysis breadcrumb
+  When user is clicks on Manage Company link from Financial Analysis breadcrumb
 	When user clicks on New company link
 	When user enters "Finsys BDD" as username
 	When user selects "IT" as company type
@@ -26,5 +26,3 @@ Feature: Create Compnay Feature
 	When user selects "MAHARASHTRA" as State
 	When user selects "PUNE" as City
 	And user clicks on SAVE button
-	
-	

@@ -17,10 +17,10 @@ public class createCompany {
 
 
 	@When("^user is clicks on Manage Company link from Financial Analysis breadcrumb$")
-	public void clickLink(String BrowserName) {
-		
+	public void managecompnayclick(String BrowserName) {
 		createComapnyPageobj.manageCompany.click();
 	}
+	
 	@When("^user clicks on New company link$")
 	public void user_clicks_on_New_company_link() throws Exception {
 		baseclass.driver.switchTo().frame("actionid");
