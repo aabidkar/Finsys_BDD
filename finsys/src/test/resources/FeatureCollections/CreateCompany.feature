@@ -4,9 +4,10 @@
 @CreateComapny 
 Feature: Create Compnay Feature 
 
-Background: user is successfully logged in & should able to create company 
+Background: user is successfully logged in & should able to create company  
 	When user opens the "Chrome" browser 
-	And user enter the url "http://localhost:/finsys/login.html" 
+	And user enter the url "http://localhost:90/finsys/login.html" 
+	Given user is on the application login page
 	And user enters "Dummyfm" as username 
 	And user enters "passw0rd" as password 
 	And user clicks on login button 
