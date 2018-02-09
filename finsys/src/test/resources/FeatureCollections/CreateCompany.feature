@@ -1,7 +1,7 @@
 #StyoryType=WEB
 #Owner=ejagruti
 #CreationDate=24-12-2017 Sunday
-@CreateComapny
+
 Feature: Create Compnay Feature
 
   Background: user is successfully logged in & should able to create company

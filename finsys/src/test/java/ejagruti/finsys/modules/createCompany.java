@@ -2,6 +2,10 @@ package ejagruti.finsys.modules;
 
 import java.sql.Driver;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import ejagruti.finsys.pageobjects.baseclass;
@@ -10,15 +14,15 @@ import ejagruti.finsys.pageobjects.homepage;
 import ejagruti.finsys.pageobjects.loginpage;
 
 public class createCompany {
-	homepage homepageobj = null;
-	loginpage loginpageobj = null;
-	createComapnyPage createComapnyPageobj = null;
+	homepage homepageobj = new homepage(baseclass.driver);
+	loginpage loginpageobj = new loginpage(baseclass.driver);
+	createComapnyPage createComapnyPageobj = new createComapnyPage(baseclass.driver);
 	//homepageobj = new homepage(baseclass.driver);
 
-
 	@When("^user is clicks on Manage Company link from Financial Analysis breadcrumb$")
-	public void managecompnayclick(String BrowserName) {
-		createComapnyPageobj.manageCompany.click();
+	public void managecompnayclick() throws InterruptedException {
+		//baseclass.driver.findElement(By.xpath("//a[@title='Manage Company']")).click();
+		createComapnyPageobj.companyclick.click();
 	}
 	
 	@When("^user clicks on New company link$")
