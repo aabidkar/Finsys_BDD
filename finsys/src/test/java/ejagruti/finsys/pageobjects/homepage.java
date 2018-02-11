@@ -18,11 +18,5 @@ public class homepage {
 	public WebElement welcomemessage;
 	@FindBy(how = How.XPATH, using = "//a[.='LOGOUT']")
 	public WebElement logout;
-<<<<<<< HEAD
-=======
-	//@FindBy(how = How.XPATH, using = "//a[@title='Manage Company']")
-	//public WebElement manageCompany;
-	
->>>>>>> 4638820f906b65bf95d66bae9b390640b8c5deaf
 
 }

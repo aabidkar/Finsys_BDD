@@ -1,12 +1,5 @@
 package ejagruti.finsys.modules;
 
-import java.sql.Driver;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import ejagruti.finsys.pageobjects.baseclass;
 import ejagruti.finsys.pageobjects.createComapnyPage;
@@ -17,18 +10,18 @@ public class createCompany {
 	homepage homepageobj = new homepage(baseclass.driver);
 	loginpage loginpageobj = new loginpage(baseclass.driver);
 	createComapnyPage createComapnyPageobj = new createComapnyPage(baseclass.driver);
-	//homepageobj = new homepage(baseclass.driver);
 
 	@When("^user is clicks on Manage Company link from Financial Analysis breadcrumb$")
-	public void managecompnayclick() throws InterruptedException {
-		//baseclass.driver.findElement(By.xpath("//a[@title='Manage Company']")).click();
+	public void managecompnayclick() {
+		System.out.println(createComapnyPageobj.companyclick.getText());
 		createComapnyPageobj.companyclick.click();
+		
 	}
 	
 	@When("^user clicks on New company link$")
 	public void user_clicks_on_New_company_link() throws Exception {
-		baseclass.driver.switchTo().frame("actionid");
-		createComapnyPageobj.save.click();
+		baseclass.driver.switchTo().frame(0);
+		createComapnyPageobj.newButton.click();
 	}
 
 	@When("^user selects \"([^\"]*)\" as company type$")
