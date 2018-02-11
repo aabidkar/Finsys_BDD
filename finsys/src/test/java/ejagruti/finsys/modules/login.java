@@ -61,6 +61,7 @@ public class login {
 	@And("^user clicks on login button$")
 	public void LoginButtonClick() {
 		loginpageobj.loginbutton.click();
+		System.out.println("after login......");
 	}
 
 	@And("^user gets the message starting with \"(.*)\" on the top$")

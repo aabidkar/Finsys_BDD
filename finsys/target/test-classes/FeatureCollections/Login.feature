@@ -6,7 +6,7 @@ Feature: Login Feature
 
 Background: user is successfully logged in 
 	When user opens the "Chrome" browser 
-	And user enter the url "http://localhost:/finsys/login.html" 
+	And user enter the url "http://localhost:90/finsys/login.html" 
 	
 @EnToEnd 
 Scenario: Login Functionality for valid username and password 

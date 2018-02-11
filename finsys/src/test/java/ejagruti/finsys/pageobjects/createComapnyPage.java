@@ -17,7 +17,7 @@ public class createComapnyPage {
 	}
 
 	@FindBy(how = How.XPATH, using = "//a[@title='Manage Company']")
-	public WebElement manageCompany;
+	public WebElement companyclick;
 	@FindBy(how = How.XPATH, using = "//span[@class='l-btn-icon icon-add']")
 	public WebElement newButton;
 	@FindBy(how = How.XPATH, using = "//input[@name='name']")
