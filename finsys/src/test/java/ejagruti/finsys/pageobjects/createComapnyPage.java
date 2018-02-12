@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class createComapnyPage {
 	WebDriver localdriverobject;
-	
 
 	public createComapnyPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -38,5 +37,7 @@ public class createComapnyPage {
 	public static WebElement city;
 	@FindBy(how = How.XPATH, using = "//span[@class='l-btn-icon icon-save']")
 	public WebElement save;
+	@FindBy(how = How.XPATH, using = "//span[@class='l-btn-icon pagination-load']")
+	public WebElement reload;
 
 }

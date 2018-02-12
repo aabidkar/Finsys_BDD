@@ -23,7 +23,7 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user enter the url \"http://localhost:/finsys/login.html\"",
+  "name": "user enter the url \"http://localhost:90/finsys/login.html\"",
   "keyword": "And "
 });
 formatter.match({
@@ -103,15 +103,14 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user enters \"Finsys BDD\" as username",
+  "name": "user enter \"Finsys BDD\" as company name",
   "keyword": "When "
 });
 formatter.match({
-  "location": "login.EnterUserName(String)"
+  "location": "createCompany.compnayname(String)"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@placeholder\u003d\u0027Username\u0027]\"}\n  (Session info: chrome\u003d64.0.3282.119)\n  (Driver info: chromedriver\u003d2.33.506120 (e3e53437346286c0bc2d2dc9aa4915ba81d9023f),platform\u003dWindows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 34 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00272.53.0\u0027, revision: \u002735ae25b1534ae328c771e0856c93e187490ca824\u0027, time: \u00272016-03-15 10:43:46\u0027\nSystem info: host: \u0027DESKTOP-9HGU2QK\u0027, ip: \u0027192.168.1.104\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_144\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, mobileEmulationEnabled\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.33.506120 (e3e53437346286c0bc2d2dc9aa4915ba81d9023f), userDataDir\u003dC:\\Users\\CM\\AppData\\Local\\Temp\\scoped_dir9236_5757}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, hasTouchScreen\u003dfalse, version\u003d64.0.3282.119, platform\u003dXP, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, acceptSslCerts\u003dtrue, locationContextEnabled\u003dtrue, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue, setWindowRect\u003dtrue, unexpectedAlertBehaviour\u003d}]\nSession ID: 06bac82c7deb72bdb353939865a75bc8\n*** Element info: {Using\u003dxpath, value\u003d//input[@placeholder\u003d\u0027Username\u0027]}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:361)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy15.sendKeys(Unknown Source)\r\n\tat ejagruti.finsys.modules.login.EnterUserName(login.java:52)\r\n\tat ✽.user enters \"Finsys BDD\" as username(src/test/resources/FeatureCollections/CreateCompany.feature:19)\r\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.step({
   "name": "user selects \"IT\" as company type",
@@ -121,7 +120,7 @@ formatter.match({
   "location": "createCompany.user_selects_as_company_type(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "user enters \"amitb@iprogrammer.com\" as email id",
@@ -131,7 +130,7 @@ formatter.match({
   "location": "createCompany.user_enters_as_email_id(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "user enters \"pandetails\" as PAN details",
@@ -141,7 +140,7 @@ formatter.match({
   "location": "createCompany.user_enters_as_PAN_details(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "user enters \"tandetails\" as TIN details",
@@ -151,7 +150,7 @@ formatter.match({
   "location": "createCompany.user_enters_as_TIN_details(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "user selects \"INDIA\" as Country",
@@ -161,7 +160,7 @@ formatter.match({
   "location": "createCompany.user_selects_as_Country(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "user selects \"MAHARASHTRA\" as State",
@@ -171,7 +170,7 @@ formatter.match({
   "location": "createCompany.user_selects_as_State(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "user selects \"PUNE\" as City",
@@ -181,7 +180,7 @@ formatter.match({
   "location": "createCompany.user_selects_as_City(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "user clicks on SAVE button",
@@ -191,6 +190,16 @@ formatter.match({
   "location": "createCompany.user_clicks_on_SAVE_button()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
+});
+formatter.step({
+  "name": "verify \"Finsys BDD\" company is added succesfully",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "createCompany.companyadded(String)"
+});
+formatter.result({
+  "status": "passed"
 });
 });
