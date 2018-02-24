@@ -72,65 +72,6 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
-<<<<<<< HEAD
-formatter.step({
-  "name": "user is on the application home page",
-  "keyword": "Then "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.step({
-  "name": "user gets the message starting with \"Welcome\" on the top",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "login.CheckForHomePage(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "close the browser",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "login.close_the_browser()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.background({
-  "name": "user is successfully logged in",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user opens the \"Chrome\" browser",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "login.OpenBrowser(String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user enter the url \"http://localhost/finsys/login.html\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "login.LaunchApplication(String)"
-});
-formatter.result({
-  "status": "passed"
-});
-=======
->>>>>>> d7730519b3cc6fcb38a4b6708fd9c2980f81a8ce
 formatter.scenario({
   "name": "Create Company with all valid inputs",
   "description": "",
@@ -202,13 +143,8 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-<<<<<<< HEAD
-  "name": "user enter the url \"http://localhost/finsys/login.html\"",
-  "keyword": "And "
-=======
   "name": "user enters \"tandetails\" as TIN details",
   "keyword": "When "
->>>>>>> d7730519b3cc6fcb38a4b6708fd9c2980f81a8ce
 });
 formatter.match({
   "location": "createCompany.user_enters_as_TIN_details(String)"
