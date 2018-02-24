@@ -1,7 +1,9 @@
 package ejagruti.finsys.modules;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -28,6 +30,7 @@ public class createCompany {
 
 	@When("^user enter \"([^\"]*)\" as company name$")
 	public void compnayname(String comapnyname) {
+		baseclass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='name']")));
 		createComapnyPageobj.companyName.sendKeys(comapnyname);
 	}
 
@@ -75,19 +78,32 @@ public class createCompany {
 	public void user_clicks_on_SAVE_button() throws Exception {
 		createComapnyPageobj.save.click();
 	}
-	
+
 	@Then("^verify \"([^\"]*)\" company is added succesfully$")
-	public void companyadded(String compnayname){
+	public void companyadded(String compnayname) {
 		createComapnyPageobj.reload.click();
-		String val = baseclass.driver.findElement(By.xpath("//tr[@id='datagrid-row-r1-2-0']/td[@field='name']")).getText();
+		String val = baseclass.driver.findElement(By.xpath("//tr[@id='datagrid-row-r1-2-0']/td[@field='name']"))
+				.getText();
 		String temp = val.replace("\n", "");
 		if (temp.equalsIgnoreCase(compnayname)) {
 			System.out.println(temp + " Company is added [PASS].");
 		} else {
 			System.out.println("Invalid Company  " + val + "[FAIL]");
 		}
-		
-		
+
+	}
+
+	@Then("^verify already exist company message displayed to the user$")
+	public void companyexistalertmessage() {
+		String alertmessage = "Company Already Exists.Please Select different Company Name!!!";
+		if (alertmessage.equalsIgnoreCase(baseclass.driver.switchTo().alert().getText())) {
+			System.out.println("PASS: Company already exist message is displayed to the user.");
+
+		} else {
+			System.out.println("FAIL: New Company added Succeesfully. Test Case is failed.");
+		}
+		baseclass.driver.switchTo().alert().accept();
+
 	}
 
 }

@@ -11,7 +11,6 @@ Feature: Create Compnay Feature
     And user enters "passw0rd" as password
     And user clicks on login button
 
-  #And user gets the message starting with "Welcome" on the top
   @SmokeTest
   Scenario: Create Company with all valid inputs
     When user is clicks on Manage Company link from Financial Analysis breadcrumb
@@ -26,3 +25,18 @@ Feature: Create Compnay Feature
     When user selects "PUNE" as City
     And user clicks on SAVE button
     Then verify "Finsys BDD" company is added succesfully
+    
+  @SmokeTest
+  Scenario: Create Company with already exist project name
+    When user is clicks on Manage Company link from Financial Analysis breadcrumb
+    When user clicks on New company link
+    When user enter "Finsys BDD" as company name
+    When user selects "IT" as company type
+    When user enters "amitb@iprogrammer.com" as email id
+    When user enters "pandetails" as PAN details
+    When user enters "tandetails" as TIN details
+    When user selects "INDIA" as Country
+    When user selects "MAHARASHTRA" as State
+    When user selects "PUNE" as City
+    And user clicks on SAVE button
+    Then verify already exist company message displayed to the user
