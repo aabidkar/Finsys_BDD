@@ -22,8 +22,7 @@ public class loginpage {
 	public WebElement password;
 	@FindBy(how = How.XPATH, using = "//span[.='Login']")
 	public WebElement loginbutton;
-	@FindBy(how=How.ID, using="error")
+	@FindBy(how = How.ID, using = "error")
 	public static WebElement textAlert;
-	
 
 }

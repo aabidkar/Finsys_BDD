@@ -1,16 +1,11 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/FeatureCollections/Login.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/FeatureCollections/CreateCompany.feature");
 formatter.feature({
-  "name": "Login Feature",
+  "name": "Create Compnay Feature",
   "description": "",
-  "keyword": "Feature",
-  "tags": [
-    {
-      "name": "@Login"
-    }
-  ]
+  "keyword": "Feature"
 });
 formatter.background({
-  "name": "user is successfully logged in",
+  "name": "user is successfully logged in \u0026 should able to create company",
   "description": "",
   "keyword": "Background"
 });
@@ -37,22 +32,6 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
-formatter.scenario({
-  "name": "Login Functionality for valid username and password",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@Login"
-    },
-    {
-      "name": "@SmokeTest"
-    },
-    {
-      "name": "@EnToEnd"
-    }
-  ]
-});
 formatter.step({
   "name": "user is on the application login page",
   "keyword": "Given "
@@ -64,8 +43,8 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user enters \"dummyfm\" as username",
-  "keyword": "When "
+  "name": "user enters \"Dummyfm\" as username",
+  "keyword": "And "
 });
 formatter.match({
   "location": "login.EnterUserName(String)"
@@ -93,6 +72,7 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+<<<<<<< HEAD
 formatter.step({
   "name": "user is on the application home page",
   "keyword": "Then "
@@ -149,202 +129,141 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+=======
+>>>>>>> d7730519b3cc6fcb38a4b6708fd9c2980f81a8ce
 formatter.scenario({
-  "name": "Login Functionality for valid username and invalid password",
+  "name": "Create Company with all valid inputs",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@Login"
-    },
-    {
       "name": "@SmokeTest"
-    },
-    {
-      "name": "@EndToEnd"
     }
   ]
 });
 formatter.step({
-  "name": "user is on the application login page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "login.user_is_on_application_login_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user enters \"dummyfm\" as username",
+  "name": "user is clicks on Manage Company link from Financial Analysis breadcrumb",
   "keyword": "When "
 });
 formatter.match({
-  "location": "login.EnterUserName(String)"
+  "location": "createCompany.managecompnayclick()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user enters \"Password\" as password",
+  "name": "user clicks on New company link",
   "keyword": "When "
 });
 formatter.match({
-  "location": "login.EnterPassword(String)"
+  "location": "createCompany.user_clicks_on_New_company_link()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user clicks on login button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "login.LoginButtonClick()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user is on the same login page",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "login.loginpage()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user gets the message starting with \"Please Enter Valid Username or Password!!!\" on the bottom",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "login.user_gets_the_message_starting_with_on_the_bottom(String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "close the browser",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "login.close_the_browser()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.background({
-  "name": "user is successfully logged in",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user opens the \"Chrome\" browser",
+  "name": "user enter \"Finsys BDD\" as company name",
   "keyword": "When "
 });
 formatter.match({
-  "location": "login.OpenBrowser(String)"
+  "location": "createCompany.compnayname(String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
+  "name": "user selects \"IT\" as company type",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "createCompany.user_selects_as_company_type(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user enters \"amitb@iprogrammer.com\" as email id",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "createCompany.user_enters_as_email_id(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user enters \"pandetails\" as PAN details",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "createCompany.user_enters_as_PAN_details(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+<<<<<<< HEAD
   "name": "user enter the url \"http://localhost/finsys/login.html\"",
   "keyword": "And "
+=======
+  "name": "user enters \"tandetails\" as TIN details",
+  "keyword": "When "
+>>>>>>> d7730519b3cc6fcb38a4b6708fd9c2980f81a8ce
 });
 formatter.match({
-  "location": "login.LaunchApplication(String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Login Functionality for invalid username and valid password",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@Login"
-    },
-    {
-      "name": "@SmokeTest"
-    },
-    {
-      "name": "@EndToEnd"
-    }
-  ]
-});
-formatter.step({
-  "name": "user is on the application login page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "login.user_is_on_application_login_page()"
+  "location": "createCompany.user_enters_as_TIN_details(String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user enters \"dummm\" as username",
+  "name": "user selects \"INDIA\" as Country",
   "keyword": "When "
 });
 formatter.match({
-  "location": "login.EnterUserName(String)"
+  "location": "createCompany.user_selects_as_Country(String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user enters \"Password\" as password",
+  "name": "user selects \"MAHARASHTRA\" as State",
   "keyword": "When "
 });
 formatter.match({
-  "location": "login.EnterPassword(String)"
+  "location": "createCompany.user_selects_as_State(String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user click on login button",
-  "keyword": "And "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.step({
-  "name": "user is on the same login page",
-  "keyword": "Then "
+  "name": "user selects \"PUNE\" as City",
+  "keyword": "When "
 });
 formatter.match({
-  "location": "login.loginpage()"
+  "location": "createCompany.user_selects_as_City(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "user gets the message starting with \"Please Enter Valid Username or Password!!!\" on the bottom",
+  "name": "user clicks on SAVE button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "login.user_gets_the_message_starting_with_on_the_bottom(String)"
+  "location": "createCompany.user_clicks_on_SAVE_button()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "close the browser",
+  "name": "verify \"Finsys BDD\" company is added succesfully",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "login.close_the_browser()"
+  "location": "createCompany.companyadded(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 });
