@@ -28,7 +28,7 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user enter the url \"http://localhost:90/finsys/login.html\"",
+  "name": "user enter the url \"http://localhost/finsys/login.html\"",
   "keyword": "And "
 });
 formatter.match({
@@ -140,7 +140,7 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user enter the url \"http://localhost:90/finsys/login.html\"",
+  "name": "user enter the url \"http://localhost/finsys/login.html\"",
   "keyword": "And "
 });
 formatter.match({
@@ -254,7 +254,7 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user enter the url \"http://localhost:90/finsys/login.html\"",
+  "name": "user enter the url \"http://localhost/finsys/login.html\"",
   "keyword": "And "
 });
 formatter.match({
