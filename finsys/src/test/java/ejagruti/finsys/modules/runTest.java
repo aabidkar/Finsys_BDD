@@ -1,12 +1,13 @@
 package ejagruti.finsys.modules;
 
 import org.junit.runner.RunWith; 
-
 import cucumber.api.CucumberOptions;
 
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
+
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
@@ -14,7 +15,7 @@ import org.junit.runner.RunWith;
 features = {"src/test/resources/FeatureCollections"},
 tags={"@SmokeTest"}
 )
-public class runTest {
+public class runTest extends AbstractTestNGCucumberTests{
 }
 /*
 @RunWith(Cucumber.class) 

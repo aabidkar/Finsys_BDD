@@ -40,3 +40,13 @@ Feature: Create Compnay Feature
     When user selects "PUNE" as City
     And user clicks on SAVE button
     Then verify already exist company message displayed to the user
+    
+  @SmokeTest
+  Scenario: Verify Create Company field validation
+    When user is clicks on Manage Company link from Financial Analysis breadcrumb
+    When user clicks on New company link
+    When user enter "Finsys BDD" as company name
+    When user selects "IT" as company type
+    When user enters invalid "asdfasdfasf" as email id
+    When user enters invalid "123" as PAN details
+    When user enters invalid "123" as TIN details

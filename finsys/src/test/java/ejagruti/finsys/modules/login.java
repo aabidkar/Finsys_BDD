@@ -4,6 +4,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeMethod;
+
 import cucumber.api.Scenario;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -96,6 +98,7 @@ public class login {
 	}
 	// ==================================================================
 
+	@BeforeMethod
 	@Before()
 	public void BeforeEveryScenario(Scenario scenario) {
 		System.out.println("new scenario is started " + scenario.getName());

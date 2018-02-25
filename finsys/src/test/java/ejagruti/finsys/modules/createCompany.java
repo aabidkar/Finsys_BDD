@@ -1,10 +1,12 @@
 package ejagruti.finsys.modules;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import ejagruti.finsys.pageobjects.baseclass;
@@ -15,6 +17,7 @@ public class createCompany {
 	homepage homepageobj = new homepage(baseclass.driver);
 	// loginpage loginpageobj = new loginpage(baseclass.driver);
 	createComapnyPage createComapnyPageobj = new createComapnyPage(baseclass.driver);
+	Actions action = new Actions(baseclass.driver);
 
 	@When("^user is clicks on Manage Company link from Financial Analysis breadcrumb$")
 	public void managecompnayclick() throws InterruptedException {
@@ -64,12 +67,14 @@ public class createCompany {
 
 	@When("^user selects \"([^\"]*)\" as State$")
 	public void user_selects_as_State(String statename) throws Exception {
+		baseclass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("stateidlist")));
 		Select state = new Select(baseclass.driver.findElement(By.id("stateidlist")));
 		state.selectByVisibleText(statename);
 	}
 
 	@When("^user selects \"([^\"]*)\" as City$")
 	public void user_selects_as_City(String cityname) throws Exception {
+		baseclass.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//select[@name='city']")));
 		Select city = new Select(baseclass.driver.findElement(By.xpath("//select[@name='city']")));
 		city.selectByVisibleText(cityname);
 	}
@@ -103,6 +108,43 @@ public class createCompany {
 			System.out.println("FAIL: New Company added Succeesfully. Test Case is failed.");
 		}
 		baseclass.driver.switchTo().alert().accept();
+
+	}
+
+	@When("^user enters invalid \"([^\"]*)\" as email id$")
+	public void invalid_enters_as_email_id(String emailid) throws Exception {
+		createComapnyPageobj.email_id.sendKeys(emailid);
+		action.moveToElement(createComapnyPageobj.email_id).build().perform();
+		baseclass.wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath("//div[contains(text(),'Please enter a valid email address.')]")));
+		WebElement toolTipElement = baseclass.driver
+				.findElement(By.xpath("//div[contains(text(),'Please enter a valid email address.')]"));
+		String toolTipText = toolTipElement.getText();
+		Assert.assertEquals("Please enter a valid email address.", toolTipText);
+	}
+
+	@When("^user enters invalid \"([^\"]*)\" as PAN details$")
+	public void invalid_PAN_details(String pan) throws Exception {
+		createComapnyPageobj.panDetails.sendKeys(pan);
+		action.moveToElement(createComapnyPageobj.panDetails).build().perform();
+		baseclass.wait.until(ExpectedConditions.visibilityOfElementLocated(
+				By.xpath("//div[contains(text(),'Please enter a value between 10 and 20.')]")));
+		WebElement toolTipElement = baseclass.driver
+				.findElement(By.xpath("//div[contains(text(),'Please enter a value between 10 and 20.')]"));
+		String toolTipText = toolTipElement.getText();
+		Assert.assertEquals("Please enter a value between 10 and 20.", toolTipText);
+	}
+
+	@When("^user enters invalid \"([^\"]*)\" as TIN details$")
+	public void invalid_TIN_details(String tin) throws Exception {
+		createComapnyPageobj.tinDetails.sendKeys(tin);
+		action.moveToElement(createComapnyPageobj.tinDetails).build().perform();
+		baseclass.wait.until(ExpectedConditions.visibilityOfElementLocated(
+				By.xpath("//div[contains(text(),'Please enter a value between 10 and 20.')]")));
+		WebElement toolTipElement = baseclass.driver
+				.findElement(By.xpath("//div[contains(text(),'Please enter a value between 10 and 20.')]"));
+		String toolTipText = toolTipElement.getText();
+		Assert.assertEquals("Please enter a value between 10 and 20.", toolTipText);
 
 	}
 
